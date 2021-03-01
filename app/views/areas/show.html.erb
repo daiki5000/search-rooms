@@ -1,0 +1,61 @@
+<div class="container">  
+  <div class="text-center">
+    <h1>選択地域での物件探し</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="position">
+        <% @areas.each do |area| %>
+          <li><%= link_to area.content, area_path(area) %>　<%= room_counts(area) %>件</li>
+        <% end %>
+      </ul>
+    </div>
+    <ul class="heya">
+      <% @rooms.each do |room| %>
+        <div class="offset-md-3 col-md-6">
+          <li><%= link_to room.content, room_path(room) %></li>
+        </div>
+        <div class="offset-md-10 col-md-2">
+          <% if logged_in? %>
+            <%= render 'favorites/favorite_button', room: room %>
+          <% end %>
+        </div>
+        <div class="col-md-12">
+          <li class="image-position"><%= image_tag room.image.url if room.image? %></li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= paginate @rooms %>
+
+
+<style>
+  .position {
+    padding-top: 100px;
+    font-size: 18px;
+  }
+  
+  .position li {
+    padding-bottom: 5px;
+  }
+  
+  .heya {
+    margin-top: 80px;
+    list-style: none;
+    font-size: 20px;
+  }
+  
+  h1 { 
+    margin-top: 40px;
+  }
+  
+  .pagination {
+    justify-content: center;
+  }
+  
+  .image-position { 
+    padding: 15px 0 20px 210px;
+  }
+  
+</style>

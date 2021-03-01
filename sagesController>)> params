@@ -1,0 +1,16 @@
+
+[1mFrom:[0m /home/ubuntu/environment/searchs/app/controllers/rooms_controller.rb:18 RoomsController#create:
+
+    [1;34m10[0m: [32mdef[0m [1;34mcreate[0m
+    [1;34m11[0m:   @room = [1;34;4mRoom[0m.new(room_params)
+    [1;34m12[0m:   
+    [1;34m13[0m:   [32mif[0m @room.save
+    [1;34m14[0m:     flash[[33m:success[0m] = [31m[1;31m'[0m[31m画像が投稿されました[1;31m'[0m[31m[0m
+    [1;34m15[0m:     redirect_to @room
+    [1;34m16[0m:   [32melse[0m
+    [1;34m17[0m:   binding.pry
+ => [1;34m18[0m:     flash.now[[33m:danger[0m] = [31m[1;31m'[0m[31m画像が投稿されませんでした[1;31m'[0m[31m[0m
+    [1;34m19[0m:     render [33m:new[0m
+    [1;34m20[0m:   [32mend[0m
+    [1;34m21[0m: [32mend[0m
+

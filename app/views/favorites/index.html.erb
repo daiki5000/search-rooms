@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="text-center">
+    <ul class="position">
+      <% @favorites.each do |favorite| %>
+        <div class="row">
+          <div class="col-md-6">
+            <li><h3><%= link_to favorite.content, room_path(favorite) %></h3></li>
+          </div>
+          <div class="col-md-6">
+            <%= render 'favorites/favorite_button', room: favorite %>
+          </div>
+        </div>
+        <p>
+          <%= image_tag favorite.image.url if favorite.image? %>
+        </p>
+      <% end %>
+    </ul>
+    <%= paginate @favorites %>
+  </div>
+</div>
+
+<style>
+  .position {
+    list-style: none;
+  }
+  
+  .row {
+    margin: 50px 0 20px 0;
+  }
+  
+  .pagination {
+    justify-content: center;
+    padding-top: 50px;
+  }
+  
+</style>

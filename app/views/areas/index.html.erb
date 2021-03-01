@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="text-center">
+    <h1>選択地域での物件探し</h1>
+  </div>
+  <div>
+    <ul class="position">
+      <% @areas.each do |area| %>
+        <li><%= link_to area.content, area_path(area) %> <%= room_counts(area) %>件</li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<style>
+  .position {
+    padding-top: 100px;
+    font-size: 18px;
+  }
+  
+  .position li {
+    padding-bottom: 5px;
+  }
+  
+  h1 {
+    margin-top: 40px;
+  }
+</style>

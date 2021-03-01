@@ -1,5 +1,38 @@
-<div class="center jumbotron">
+<div class="gazo">
   <div class="text-center">
     <h1>最高の物件探し</h1>
+    <%= link_to '一覧から早速探す', areas_path, class: 'btn btn-lg btn-success' %>
+    <p>ログイン、新規登録がまだの方はこちら</p>
+    <div class="row">
+      <div class="col-md-7">
+        <%= link_to 'ログイン', login_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+      <div class="col-md-3">
+        <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-primary' %>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<style>
+  h1 { 
+    padding: 60px 0 200px 0;
+    font-size: 60px;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+  }
+  
+  p {
+    padding: 140px 0 25px 0;
+    font-size: 22px;
+  }
+  
+  .gazo {
+    background-image: url(<%= asset_path('734_00.jpg') %>);
+    height: 780px;
+    background-size: cover;
+    width: 100%;
+  }
+  
+</style>

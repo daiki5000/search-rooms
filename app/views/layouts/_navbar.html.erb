@@ -1,15 +1,21 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Microposts</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link">Signup</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <% if logged_in? %>
+        <%= link_to '検索へ戻る', areas_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><%= link_to 'お気に入り一覧', favorites_path, class: "nav-link" %></li>
+          </ul>
+        </div>
+      <% else %>
+        
+        <%= link_to 'トップページへ戻る', root_path, class: "navbar-brand" %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <% end %>
+    </nav>
 </header>
